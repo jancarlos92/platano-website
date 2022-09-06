@@ -29,6 +29,10 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'kimurai'
 
+gem 'byebug'
+
+gem 'rb-readline'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
