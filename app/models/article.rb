@@ -2,7 +2,9 @@ class Article < ApplicationRecord
 
     attr_accessor :headline, :content
 
-    def initialize
+    def initialize(headline)
+        @headline = headline
+    
       end
 
 end

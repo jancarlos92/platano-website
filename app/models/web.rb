@@ -32,20 +32,28 @@ def parse(response, url:, data: {})
 
 
 
-
-  articles = response.css('article').css('div').css('[@class="Component-heading-0-2-128 Component-headingMobile-0-2-129 -cardHeading undefined"]')
+  articlesfeed = response.css('article').css('a')
 
    #response.css('article').css("//div[@class='FeedCard urn:publicid:ap.org:dbd877b9babbc260f673e60f5d2c66fc Component-wireStory-0-2-89']")
+# Component-headline-0-2-99
+#
+# '[@class="Component-headline-0-2-99"]'
 
-  articles.each do |article|
 
-    headlines = []
+
+byebug
+
+
+
+      articlesfeed.each do |article|
 
     item = Hash.new
 
+     item[:headline] = article.text
+     item[:content] = article.text
+     # item[:content] = article[0].text
 
-
-     item[:headline]     = article.children.text
+     # item[:subheadline] = article[1].text
     # item[:price]      = article.css('span.listing-row__price')&.text&.squish&.delete('^0-9').to_i
     # item[:stock_type] = article.css('div.listing-row__stocktype')&.text&.squish
     # item[:miles]      = article.css('span.listing-row__mileage')&.text&.squish&.delete('^0-9').to_i
@@ -54,8 +62,8 @@ def parse(response, url:, data: {})
     # item[:transmission] = article.css('ul.listing-row__meta li')[2]&.text&.squish.gsub('Transmission: ', '')
     # item[:drivetrain]   = article.css('ul.listing-row__meta li')[3]&.text&.squish.gsub('Drivetrain: ', '')
     #
-    # Vehicle.where(item).first_or_create
-    byebug
+     Article.where(item).first_or_create
+
 
   end
 end

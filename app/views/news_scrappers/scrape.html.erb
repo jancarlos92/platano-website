@@ -1,0 +1,11 @@
+<% @articles.each do |article| %>
+ <div class="col-md-4">
+
+  <h1><%= article.headline %></h1>
+  <p><%= article.content %></p>
+  <br>
+  
+ </div>
+<% end %>
+<p id="notice"> <%=notice%></p>
+<p id="alert"> <%=alert%></p>

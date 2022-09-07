@@ -9,21 +9,22 @@ class NewsScrappersController < ApplicationController
   def scrape
 
       url = 'https://apnews.com/hub/puerto-rico'
+
       response = Web.process(url)
+
+
   if response[:status] == :completed && response[:error].nil?
-
       flash.now[:notice] = "Successfully scraped url"
-        byebug
-  else
 
+     
+  else
       flash.now[:alert] = response[:error]
-     byebug
+
   end
 
     rescue StandardError => e
-
         flash.now[:alert] = "Error: #{e}"
-        byebug
+
    end
 
 
