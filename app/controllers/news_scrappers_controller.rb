@@ -1,5 +1,6 @@
 class NewsScrappersController < ApplicationController
   def index
+      @articles = Article.all
   end
 
   def new
@@ -13,10 +14,12 @@ class NewsScrappersController < ApplicationController
       response = Web.process(url)
 
 
+
   if response[:status] == :completed && response[:error].nil?
+
       flash.now[:notice] = "Successfully scraped url"
 
-     
+
   else
       flash.now[:alert] = response[:error]
 

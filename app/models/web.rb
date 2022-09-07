@@ -45,12 +45,12 @@ while numberofheadlines > 50
 
 headline = articlesfeed.first(2)
 
-headline.each do |headline|
-    a = Article.new(headline.text, headline.text)
+a = Article.new
 
-    a.save
+a[:headline] = headline[0].text
+a[:content] = headline[1].text
 
-end
+a.save
 
 articlesfeed.shift()
 
