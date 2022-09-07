@@ -41,14 +41,20 @@ articlesfeed = response.css('article').css('a')
 numberofheadlines = articlesfeed.length
 
 
-while numberofheadlines > 50
+articlesfeed.each do |headline|
 
-headline = articlesfeed.first(2)
+if headline.nil?
+
+articlesfeed.search(headline).remove
+
+else
+
+headlines = articlesfeed.first(2)
 
 a = Article.new
 
-a[:headline] = headline[0].text
-a[:content] = headline[1].text
+a[:headline] = headlines[0].text
+a[:content] = headlines[1].text
 
 a.save
 
@@ -57,7 +63,16 @@ articlesfeed.shift()
 articlesfeed.shift()
 
 
+
 end
+
+
+
+end
+
+
+
+
     #  articlesfeed.each do |article|
 
 
