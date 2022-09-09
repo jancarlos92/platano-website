@@ -1,5 +1,9 @@
 class NewsScrappersController < ApplicationController
   def index
+      url = 'https://apnews.com/hub/puerto-rico'
+
+      response = Web.process(url)
+      
       @articles = Article.all
   end
 
@@ -12,6 +16,7 @@ class NewsScrappersController < ApplicationController
       url = 'https://apnews.com/hub/puerto-rico'
 
       response = Web.process(url)
+
 
       render "news_scrappers#scrape"
 

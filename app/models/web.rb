@@ -1,3 +1,5 @@
+require 'uri'
+require 'http'
 require 'Article'
 
 class Web < Kimurai::Base
@@ -40,16 +42,27 @@ articlesfeed = response.css('article').css('a')
 
 numberofheadlines = articlesfeed.length
 
+filteredFeed = []
 
-articlesfeed.each do |headline|
+articlesfeed.map do |headline|
 
-if headline.nil?
+if headline.text.length < 1
 
 articlesfeed.search(headline).remove
 
 else
 
-headlines = articlesfeed.first(2)
+    filteredFeed << headline
+
+end
+
+end
+
+
+
+while filteredFeed.length > 1
+
+headlines = filteredFeed.first(2)
 
 a = Article.new
 
@@ -58,20 +71,24 @@ a[:content] = headlines[1].text
 
 a.save
 
-articlesfeed.shift()
+filteredFeed.shift()
 
-articlesfeed.shift()
-
-
+filteredFeed.shift()
 
 end
 
 
 
-end
 
-
-
+# 1393701397820093
+#
+# GET graph.facebook.com/ig_hashtag_search?user_id=1393701397820093&q=coke
+#
+# to get coke hashtag id which would be the number ending in 1021
+#
+#
+# GET graph.facebook.com/17873440459141021/recent_media
+# ?user_id=17841405309211844
 
     #  articlesfeed.each do |article|
 
@@ -100,4 +117,23 @@ end
 
   #end
 end
+
+# 1393701397820093
+def self.instagramReq
+
+    a = HTTP.get('http://graph.facebook.com/ig_hashtag_search?user_id=107773022076803&q=coke')
+
+    byebug
+
+        #/ig_hashtag_search?user_id=17841454624630279&q=coke&app_id=17841454624630279')
+     # 17841454624630279 platano id
+    # uri = URI.parse('graph.facebook.com/ig_hashtag_search?user_id=1393701397820093&q=coke')
+    # res = Net::HTTP.get_response(uri)
+    # puts res.body if res.is_a?(Net::HTTPSuccess)
+
+end
+
+
+
+
 end

@@ -30,7 +30,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'kimurai'
 
 gem 'byebug'
-
+gem 'http'
 gem 'rb-readline'
 
 # Use ActiveStorage variant
