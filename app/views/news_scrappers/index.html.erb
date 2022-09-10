@@ -1,47 +1,56 @@
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <%= stylesheet_link_tag "news_scrapper" %>
 
 <div class="w3-top" style="background-color: black; left: 0px">
   <div class="w3-row w3-padding w3-black">
     <div class="w3-col s3">
-      <a href="#" class="w3-button w3-block w3-black">Home</a>
+      <a href="#" class="w3-button w3-block w3-black"><a href="#" class="fa fa-instagram"></a></a>
     </div>
     <div class="w3-col s3">
-      <a href="#about" class="w3-button w3-block w3-black">About</a>
+      <a href="#about" class="w3-button w3-block w3-black"><a href="#" class="fa fa-facebook"></a>
     </div>
     <div class="w3-col s3">
-      <a href="#menu" class="w3-button w3-block w3-black">News</a>
+      <a href="#menu" class="w3-button w3-block w3-black"><a href="#" class="fa fa-twitter"></a>
     </div>
     <div class="w3-col s3">
-      <a href="#where" class="w3-button w3-block w3-black">Culture</a>
+      <a href="#where" class="w3-button w3-block w3-black">Culture/About</a>
     </div>
   </div>
 </div>
 
+<div class="parallax">
     <h1 style="
     height: 500px;
     margin-top: 51.44;
-    padding-top: 150px;
+    padding-top: 350px;
 ">
-        <a href="" class="typewrite" data-period="2000" data-type='[ "One Movie.", "Two Brothers.", "Platano, The Movie.", "Vive La Raza, Latine!" ]'>
+        <a href="" class="typewrite" data-period="2000" data-type='[ "One Movie.", "Two Brothers.", "Platano." ]'>
         </a>
     </h1>
+</div>
 
 
 
 
 
-    <div class="row">
-      <div class="column">
-      <% @articles.each do |article| %>
-      <div class="col-md-4">
 
-          <h1><%= article[:headline] %></h1>
-          <p><%= article[:content] %></p>
-          <br>
 
-      </div>
+
+
+
+
+
+
+<div class="ticker-wrap">
+    <div class="ticker">
+        <div class="ticker__item">
+            <div class="ticker__item">
+                Carribean News </div>
+      <% @articles.first(10).each do |article| %>
+        <div class="ticker__item">
+         <%= article[:headline] %> <%= article[:content] %>
+         </div>
       <% end %>
   </div>
-      <div class="column"></div>
-    </div>
+  </div>
+  </div>
