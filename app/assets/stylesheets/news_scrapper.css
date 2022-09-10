@@ -43,3 +43,17 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.parallax-1 {
+  /* The image used */
+  background-image: url("pexels-picha-6210449.jpg");
+
+  /* Set a specific height */
+  min-height: 675px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
