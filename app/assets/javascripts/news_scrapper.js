@@ -1,5 +1,6 @@
 
-var TxtType = function(el, toRotate, period) {
+
+const TxtType = function(el, toRotate, period) {
         this.toRotate = toRotate;
         this.el = el;
         this.loopNum = 0;
@@ -39,6 +40,24 @@ var TxtType = function(el, toRotate, period) {
         that.tick();
         }, delta);
     };
+
+    function reveal() {
+        var reveals = document.querySelectorAll(".reveal, .reveal-1");
+
+        for (var i = 0; i < reveals.length; i++) {
+            var windowHeight = window.innerHeight;
+            var elementTop = reveals[i].getBoundingClientRect().top;
+            var elementVisible = 150;
+
+            if (elementTop < windowHeight - elementVisible) {
+                reveals[i].classList.add("active");
+            } else {
+                reveals[i].classList.remove("active");
+            }
+        }
+    }
+
+    window.addEventListener("scroll", reveal);
 
     window.onload = function() {
         var elements = document.getElementsByClassName('typewrite');
