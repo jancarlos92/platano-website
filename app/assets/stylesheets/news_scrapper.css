@@ -8,6 +8,10 @@ body {
 
 }
 
+
+h1{
+    font-family: "Bebas Neue";
+}
 * { color:#fff; text-decoration: none;}
 
 .w3-top {
@@ -35,6 +39,21 @@ body {
   clear: both;
 }
 
+
+.breaker {
+    /* The image used */
+    background-image: url("steven-van-bTPP3jBnOb8-unsplash.jpg");
+
+    /* Set a specific height */
+    min-height: 675px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.8;
+}
 .parallax {
   /* The image used */
   background-image: url("sandip-kalal-dG0qAZ2ge0A-unsplash.jpg");
@@ -87,7 +106,7 @@ h1
     width: 100%;
     color: white;
     font-weight: 700;
-    margin: 10px;
+    margin: 0px;
     letter-spacing: 0.2em;
     line-height: 2;
     text-align: center;
@@ -132,11 +151,13 @@ section h3{
 }
 section .text-container{
    display: flex;
+   font-family: "Pathway Gothic One";
 }
-section .text-container .text-box{
-  margin: 20px;
-  padding: 20px;
-  background: #00c2cb;
+.text-container .text-box{
+    font-family: "Pathway Gothic One";
+    font-size: 18px;
+
+
 }
 section .text-container .text-box h3{
   font-size: 30px;
