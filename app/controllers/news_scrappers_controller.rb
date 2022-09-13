@@ -3,8 +3,10 @@ class NewsScrappersController < ApplicationController
       url = 'https://apnews.com/hub/puerto-rico'
 
       response = Web.process(url)
-      
+
       @articles = Article.all
+
+      DeleteOldArticlesJob.perform_in(10.minutes, @articles)
   end
 
   def new
