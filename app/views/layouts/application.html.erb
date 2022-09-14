@@ -6,7 +6,11 @@
       <link href="https://fonts.googleapis.com/css2?family=Teko&display=swap" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css2?family=Pathway+Gothic+One&display=swap" rel="stylesheet">
 
-
+      <% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+<% end %>
     <title>PlatanoMovieWebsite</title>
 
     <%= csrf_meta_tags %>
@@ -18,5 +22,7 @@
   <%= favicon_link_tag asset_path('scott-webb-Ar0QYv-qtw4-unsplash.jpg') %>
   <body>
     <%= yield %>
+
+
   </body>
 </html>

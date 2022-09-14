@@ -20,7 +20,6 @@ h1{
     width:100%;
     z-index:1;
     top:0;
-    bottom: 700px;
 }
 
 .w3-col.s3{
@@ -171,6 +170,7 @@ input[type=text] {
 padding: 12px 20px;
 margin: 8px 0;
 box-sizing: border-box;
+color: black;
 }
 
 input[type=text]:focus {

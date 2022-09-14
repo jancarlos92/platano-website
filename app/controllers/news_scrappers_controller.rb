@@ -7,6 +7,7 @@ class NewsScrappersController < ApplicationController
       @articles = Article.all
 
       DeleteOldArticlesJob.perform_in(10.minutes, @articles)
+
   end
 
   def new
@@ -24,21 +25,23 @@ class NewsScrappersController < ApplicationController
 
   end
 
-  # if response[:status] == :completed && response[:error].nil?
-  #
-  #     flash.now[:notice] = "Successfully scraped url"
-  #
-  #
-  # else
-  #     flash.now[:alert] = response[:error]
-  #
-  # end
-  #
-  #   rescue StandardError => e
-  #       flash.now[:alert] = "Error: #{e}"
-  #
-  #  end
+  def create
 
+       @newsupporter = Supporter.new(email: params.require(:email))
+
+       if @newsupporter.save
+
+
+           SupporterMailer.with(supporter: @newsupporter).welcome_email.deliver_now
+
+           flash[:success] = "Thank You So Much!"
+
+           redirect_back(fallback_location: root_path)
+
+       else
+          redirect_back(fallback_location: root_path)
+       end
+  end
 
 
 

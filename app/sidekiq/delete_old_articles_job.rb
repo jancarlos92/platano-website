@@ -1,7 +1,7 @@
 class DeleteOldArticlesJob
   include Sidekiq::Job
 
-  def perform(*args)
-    # Do something
+  def perform(articles)
+    articles.delete_all
   end
 end

@@ -76,8 +76,12 @@
                 <br>
 
                 <i class="fa-regular fa-mailbox"></i>
+                <%= form_with url: "/news_scrappers", method: :post do |form| %>
+                <%= form.text_field :email %>
 
-                <input type="text" name="email" value="email"> </h1>
+<% end %>
+
+                 </h1>
                 </div>
         </div>
 </div>
@@ -85,7 +89,11 @@
 
 
 
-
+<% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+<% end %>
 
 
 
