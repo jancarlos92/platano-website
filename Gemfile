@@ -29,7 +29,7 @@ gem 'redis', '~> 4.0'
 
 gem 'kimurai'
 gem 'dotenv-rails'
-gem 'byebug'
+
 gem 'http'
 gem 'rb-readline'
 
