@@ -60,7 +60,7 @@ end
 
 
 
-while filteredFeed.length > 1
+while filteredFeed.length > 40
 
 headlines = filteredFeed.first(2)
 

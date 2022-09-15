@@ -1,6 +1,6 @@
 
 
-let TxtType = function(el, toRotate, period) {
+const TxtType = function(el, toRotate, period) {
         this.toRotate = toRotate;
         this.el = el;
         this.loopNum = 0;
