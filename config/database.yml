@@ -81,6 +81,7 @@ test:
 #
 production:
   <<: *default
+  url: <%= ENV["DATABASE_URL"] %>
   database: platano-movie-website_production
   username: platano-movie-website
   password: <%= ENV['PLATANO-MOVIE-WEBSITE_DATABASE_PASSWORD'] %>
