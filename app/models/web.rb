@@ -1,3 +1,7 @@
+require 'uri'
+require 'http'
+require 'Article'
+
 class Web < Kimurai::Base
 
 
