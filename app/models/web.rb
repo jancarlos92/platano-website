@@ -1,6 +1,6 @@
 require 'uri'
 require 'http'
-require 'Article'
+require 'article'
 
 class Web < Kimurai::Base
 
