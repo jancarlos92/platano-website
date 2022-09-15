@@ -1,20 +1,27 @@
 
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <!-- * *                               SB Forms JS                               * *-->
+    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+
+
+
 <%= stylesheet_link_tag "news_scrapper" %>
 
 <div class="w3-top" style="background-color: black; left: 0px">
   <div class="w3-row w3-padding w3-black">
     <div class="w3-col s3">
-      <a href="#" class="w3-button w3-block w3-black"><a href="https://www.instagram.com/platanopelicula" class="fa fa-instagram"></a></a>
-    </div>
-    <div class="w3-col s3">
-      <a href="#about" class="w3-button w3-block w3-black"><a href="#" class="fa fa-facebook"></a>
-    </div>
-    <div class="w3-col s3">
-      <a href="#menu" class="w3-button w3-block w3-black"><a href="#" class="fa fa-twitter"></a>
+      <a class=".nounderline"><a style="text-decoration:none" href="https://www.instagram.com/platanopelicula" class="fa fa-instagram"></a></a>
     </div>
     <div class="w3-col s3">
 
-      <a href="#about"> /About</a>
+      <a href="#about" style="text-decoration:none" > /About</a>
     </div>
   </div>
 </div>
@@ -25,8 +32,8 @@
     margin-top: 51.44;
     padding-top: 350px;
 ">
-        <a href="" class="typewrite" data-period="2000" data-type='[ "One Movie.", "Two Brothers.", "Platano." ]'>
-        </a>
+        <p href="" class="typewrite" data-period="2000" data-type='[ "One Movie.", "Two Brothers.", "Platano." ]'>
+        </p>
     </h1>
 </div>
 
@@ -75,11 +82,12 @@
             <h1 class="page-title">Subscribe to our Newsletter for News and More!
                 <br>
 
-                <i class="fa-regular fa-mailbox"></i>
+
                 <%= form_with url: "/news_scrappers", method: :post do |form| %>
                 <%= form.text_field :email %>
 
 <% end %>
+
 
                  </h1>
                 </div>
@@ -105,7 +113,7 @@
     <div class="ticker">
         <div class="ticker__item">
             <div class="ticker__item">
-                Carribean News </div>
+                Current Carribean News Headlines: </div>
       <% @articles.first(10).each do |article| %>
         <div class="ticker__item">
          <%= article[:headline] %> <%= article[:content] %>
