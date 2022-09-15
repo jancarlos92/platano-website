@@ -6,7 +6,7 @@ class NewsScrappersController < ApplicationController
 
       @articles = Article.all
 
-       DeleteOldArticlesJob.perform_in(10.minutes, @articles)
+       # DeleteOldArticlesJob.perform_in(10.minutes, @articles)
 
   end
 
