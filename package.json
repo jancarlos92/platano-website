@@ -2,7 +2,5 @@
   "name": "platano-movie-website",
   "private": true,
   "dependencies": {}
-  "scripts": {
-      "start": "node index.js"
-  }
+ 
 }
