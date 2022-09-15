@@ -152,6 +152,8 @@ section h3{
 section .text-container{
    display: flex;
    font-family: "Pathway Gothic One";
+   background-color: black;
+   opacity: 0.5;
 }
 .text-container .text-box{
     font-family: "Pathway Gothic One";
