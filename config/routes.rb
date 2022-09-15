@@ -1,9 +1,3 @@
 Rails.application.routes.draw do
-
-
-    resources :news_scrappers do
-    match '/scrape', to: 'news_scrappers#scrape', via: :post, on: :collection
-  end
-
-  root to: "news_scrappers#index"
- end
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+end
